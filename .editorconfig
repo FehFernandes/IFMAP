@@ -1,0 +1,52 @@
+# EditorConfig - https://editorconfig.org
+
+root = true
+
+# Configurações globais
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# PHP (Backend Laravel)
+[*.php]
+indent_size = 4
+
+# TypeScript / JavaScript / JSX / TSX (Frontend e Mobile)
+[*.{ts,tsx,js,jsx}]
+indent_size = 2
+
+# JSON
+[*.json]
+indent_size = 2
+
+# YAML
+[*.{yml,yaml}]
+indent_size = 2
+
+# Markdown
+[*.md]
+trim_trailing_whitespace = false
+
+# Makefile (requer tabs)
+[Makefile]
+indent_style = tab
+
+# Configurações do Composer
+[composer.json]
+indent_size = 4
+
+# Env files
+[.env*]
+insert_final_newline = false
+
+# HTML
+[*.html]
+indent_size = 2
+
+# CSS
+[*.css]
+indent_size = 2
