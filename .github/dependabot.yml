@@ -1,0 +1,62 @@
+version: 2
+updates:
+  # Backend (Laravel / Composer)
+  - package-ecosystem: composer
+    directory: /backend
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore(backend)'
+    labels:
+      - dependências
+      - backend
+
+  # Painel administrativo (npm)
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore(frontend)'
+    labels:
+      - dependências
+      - frontend
+    groups:
+      react:
+        patterns:
+          - react
+          - react-dom
+          - '@types/react'
+          - '@types/react-dom'
+
+  # Aplicativo mobile (npm)
+  - package-ecosystem: npm
+    directory: /mobile
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore(mobile)'
+    labels:
+      - dependências
+      - mobile
+    ignore:
+      # Pacotes do Expo devem ser atualizados via `npx expo install --fix`
+      - dependency-name: expo*
+      - dependency-name: react-native*
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: 'chore(ci)'
+    labels:
+      - dependências
+      - ci
